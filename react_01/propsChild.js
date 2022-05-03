@@ -11,11 +11,6 @@
  
 const PropsChild = (props) => {
     return (
-        // <View>
-        //     <Text onPress={props.changeState}>
-        //         {props.sampleText}
-        //     </Text>
-        // </View>
         <View>
          <Text onPress={props.propsChildChangeSate}>
             {props.propsChildSampleText}
