@@ -14,7 +14,7 @@ class App extends Component {
 
   state = { // state 는 render 함수 위에 작성
     sampleText : 'Hello World',
-    sampleBoolean : true
+    sampleBoolean : false
   }
 
   inputText = () => ( //inputText 함수 작성 
@@ -24,10 +24,26 @@ class App extends Component {
       <Text>sampleBoolean is false</Text>
   )
 
+  changeState = () => {
+    if (!this.state.sampleBoolean) {
+      this.setState({
+        sampleText : 'Text Changed!!!',
+        sampleBoolean : true 
+      })
+    } else {
+      this.setState({
+        sampleText : 'Hello World!!!',
+        sampleBoolean : false 
+      })
+    } 
+  }
+
   render() {
     return (
       <View style={styles.background}>
-        {this.inputText()}
+        <Text onPress={this.changeState}>
+          {this.state.sampleText}
+        </Text>
       </View>
     )
   }
