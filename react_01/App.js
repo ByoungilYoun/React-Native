@@ -9,6 +9,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
+import PropsChild from './propsChild';
 
 class App extends Component {
 
@@ -56,9 +57,7 @@ class App extends Component {
   render() {
     return (
       <View style={styles.background}>
-        <Text onPress={this.onAdd}>
-          {this.state.sampleNum}
-        </Text>
+        <PropsChild propsChildSampleText={this.state.sampleText} propsChildChangeSate={this.changeState}/>
       </View>
     )
   }
