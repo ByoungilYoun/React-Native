@@ -11,10 +11,23 @@ import { View, Text, StyleSheet } from 'react-native';
 import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 class App extends Component {
+
+  state = { // state 는 render 함수 위에 작성
+    sampleText : 'Hello World',
+    sampleBoolean : true
+  }
+
+  inputText = () => ( //inputText 함수 작성 
+    this.state.sampleBoolean ?
+      <Text>sampleBoolean is true</Text>
+    : 
+      <Text>sampleBoolean is false</Text>
+  )
+
   render() {
     return (
       <View style={styles.background}>
-        <Text>Hello World</Text>
+        {this.inputText()}
       </View>
     )
   }
