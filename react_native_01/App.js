@@ -9,22 +9,31 @@
 import React, {Component} from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Header from './src/header';
+import Generator from './src/generator';
 
 class App extends Component {
 
 
   state = {
-    appName : 'My First App'
+    appName : 'My First App',
+    random : [36, 999]
+  }
+
+  onAddRandomNum = () => {
+    alert('add random number!!!')
   }
 
   render() {
     return (
       <View style={styles.mainView}>
-         {/* <Header name={this.state.appName}/> */}
-         
-         <Text onPress={()=>alert('text touch event')}
-         style={styles.mainText}
-         >Hello World</Text>
+         <Header name={this.state.appName}/>
+         <View>
+          <Text 
+          style={styles.mainText}
+          onPress={()=>alert('text touch event')} // text 에 터치 이벤트 주기
+          >Hello World</Text>
+         </View>
+        <Generator add={this.onAddRandomNum}/>
       </View>
     )
   }
