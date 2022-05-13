@@ -20,8 +20,24 @@ class App extends Component {
     random : [36, 999]
   }
 
+  // 클릭하면 랜덤 숫자 생성 
   onAddRandomNum = () => {
-    alert('add random number!!!')
+    const randomNum = Math.floor(Math.random()*100+1)
+    this.setState(prevState => {
+      return {
+        random : [...prevState.random, randomNum]
+      }
+    })
+  }
+
+  onNumDelete = (position) => {
+    const newArray = this.state.random.filter((num, index) => {
+      return position != index;
+    })
+
+    this.setState({
+      random : newArray
+    })
   }
 
   render() {
@@ -36,7 +52,10 @@ class App extends Component {
          </View>
         <Generator add={this.onAddRandomNum}/>
 
-        <NumList num={this.state.random}/>
+        <NumList 
+          num={this.state.random}
+          delete={this.onNumDelete}
+        />
       </View>
     )
   }
