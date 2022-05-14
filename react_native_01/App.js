@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import { View, Text, StyleSheet, ScrollView} from 'react-native';
+import { TextInput, Button, View, Text, StyleSheet, ScrollView} from 'react-native';
 import Header from './src/header';
 import Generator from './src/generator';
 import NumList from './src/numlist';
@@ -15,58 +15,55 @@ import Input from './src/input';
 
 class App extends Component {
 
-
   state = {
-    appName : 'My First App',
-    random : [36, 999]
-  }
+    myTextInput : '',
+    alphabet : ['a','b','c','d']
+}
 
-  // 클릭하면 랜덤 숫자 생성 
-  onAddRandomNum = () => {
-    const randomNum = Math.floor(Math.random()*100+1)
-    this.setState(prevState => {
-      return {
-        random : [...prevState.random, randomNum]
-      }
-    })
-  }
-
-  onNumDelete = (position) => {
-    const newArray = this.state.random.filter((num, index) => {
-      return position != index;
-    })
-
+onChangeInput = (event) => {
     this.setState({
-      random : newArray
+        myTextInput : event
+    })
+}
+
+  onAddTextInput = () => {
+    this.setState(prevState=>{
+      return {
+        myTextInput : '', // 빈값으로 초기화
+        alphabet : [...prevState.alphabet, prevState.myTextInput]
+      }
     })
   }
 
   render() {
     return (
       <View style={styles.mainView}>
-         {/* <Header name={this.state.appName}/>
-         <View>
-          <Text 
-          style={styles.mainText}
-          onPress={()=>alert('text touch event')} // text 에 터치 이벤트 주기
-          >Hello World</Text>
-         </View>
-        <Generator add={this.onAddRandomNum}/>
+           <TextInput 
+            value={this.state.myTextInput}
+            style={styles.input}
+            onChangeText={this.onChangeInput} // 위에서 만든 onChangeInput 함수를 통해서 텍스트필드에 입력값 판별
+            multiline={true} // 라인 늘어남
+            maxLength={10} // 글자수 제한
+            autoCapitalize={'none'} // 문장 첫글자 대문자 방지 (소문자로)
+            editable={true} // 입력 가능한지 안한지
+      />
+          <Button 
+            title="Add Text Input"
+            onPress={this.onAddTextInput}
+            />
 
-        <ScrollView
-          style={{width : '100%'}}
-         // onMomentumScrollBegin={()=>alert('begin')} //onMomentumScrollBegin : 스크롤이 움직이기 시작했을때(스크롤을 올리거나 내렸을때 이후 스스로 잠깐 움직일때) trigger 해주는 함수
-         //onMomentumScrollEnd={()=>alert('begin')} // 스크롤의 움직임이 멈췄을때 트리거 해주는 함수 
-         //onScroll={()=>alert('scrolling')} // 스크롤을 움직였을때 (1px 이라도) 바로 trigger 해주는 함수 
-         //onContentSizeChange={(width, height)=>alert(height)} // 버튼을 눌를때마다 height 값이 표현됨
-          bounces={false} // 스크롤을 맨위로, 맨밑으로 내렸을때 통통 튀는 효과
-        >
-          <NumList 
-            num={this.state.random}
-            delete={this.onNumDelete}
-          />
-        </ScrollView> */}
-        <Input/>
+            <ScrollView style={{width : '100%'}}>
+              {
+                this.state.alphabet.map((item, idx) => (
+                  <Text 
+                  style={styles.mainText}
+                  key={idx}
+                  >
+                    {item}
+                  </Text>
+                ))
+              }
+            </ScrollView>
       </View>
     )
   }
@@ -96,8 +93,17 @@ const styles = StyleSheet.create ({
     fontSize : 20,
     fontWeight : 'normal',
     color : 'red',
-    padding : 20
-  }
+    padding : 20,
+    margin : 20,
+    backgroundColor : 'pink'
+  },
+  input : {
+    width : '100%',
+    backgroundColor : '#cecece',
+    marginTop : 20,
+    fontSize : 25,
+    padding : 10
+}
 })
 
 export default App;
