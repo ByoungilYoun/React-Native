@@ -40,7 +40,7 @@ onChangeInput = (event) => {
     return (
       <View style={styles.mainView}>
         <Picker/>
-           <TextInput 
+           {/* <TextInput 
             value={this.state.myTextInput}
             style={styles.input}
             onChangeText={this.onChangeInput} // 위에서 만든 onChangeInput 함수를 통해서 텍스트필드에 입력값 판별
@@ -65,7 +65,7 @@ onChangeInput = (event) => {
                   </Text>
                 ))
               }
-            </ScrollView>
+            </ScrollView> */}
       </View>
     )
   }
