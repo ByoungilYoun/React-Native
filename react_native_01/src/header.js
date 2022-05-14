@@ -22,6 +22,7 @@
         </View>
      </TouchableOpacity>
 
+// TouchableWithoutFeedback 속성 예시 
 //    <TouchableWithoutFeedback
 //    onPress={()=>alert('hello world')}
 //    >

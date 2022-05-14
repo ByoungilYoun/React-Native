@@ -11,6 +11,7 @@ import { View, Text, StyleSheet, ScrollView} from 'react-native';
 import Header from './src/header';
 import Generator from './src/generator';
 import NumList from './src/numlist';
+import Input from './src/input';
 
 class App extends Component {
 
@@ -43,7 +44,7 @@ class App extends Component {
   render() {
     return (
       <View style={styles.mainView}>
-         <Header name={this.state.appName}/>
+         {/* <Header name={this.state.appName}/>
          <View>
           <Text 
           style={styles.mainText}
@@ -58,13 +59,14 @@ class App extends Component {
          //onMomentumScrollEnd={()=>alert('begin')} // 스크롤의 움직임이 멈췄을때 트리거 해주는 함수 
          //onScroll={()=>alert('scrolling')} // 스크롤을 움직였을때 (1px 이라도) 바로 trigger 해주는 함수 
          //onContentSizeChange={(width, height)=>alert(height)} // 버튼을 눌를때마다 height 값이 표현됨
-          bounces={false}
+          bounces={false} // 스크롤을 맨위로, 맨밑으로 내렸을때 통통 튀는 효과
         >
           <NumList 
             num={this.state.random}
             delete={this.onNumDelete}
           />
-        </ScrollView>
+        </ScrollView> */}
+        <Input/>
       </View>
     )
   }
