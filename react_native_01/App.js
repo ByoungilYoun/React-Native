@@ -42,9 +42,10 @@ onChangeInput = (event) => {
       <View style={styles.mainView}>
         <Image 
           style={styles.image}
-          source={Steak}
+          source={{uri:'https://picsum.photos/id/237/200/300'}}
           resizeMode='contain'
           // resizeMode='cover'
+          onLoadEnd={()=>alert('Image loaded')}
         />
       </View>
     )
