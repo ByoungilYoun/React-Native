@@ -7,12 +7,13 @@
  */
 
 import React, {Component} from 'react';
-import { TextInput, Button, View, Text, StyleSheet, ScrollView} from 'react-native';
+import { TextInput, Button, View, Text, StyleSheet, ScrollView, Image} from 'react-native';
 import Header from './src/header';
 import Generator from './src/generator';
 import NumList from './src/numlist';
 import Input from './src/input';
 import Picker from './src/picker';
+import Steak from './assets/images/steak.jpg'
 
 class App extends Component {
 
@@ -39,33 +40,12 @@ onChangeInput = (event) => {
   render() {
     return (
       <View style={styles.mainView}>
-        <Picker/>
-           {/* <TextInput 
-            value={this.state.myTextInput}
-            style={styles.input}
-            onChangeText={this.onChangeInput} // 위에서 만든 onChangeInput 함수를 통해서 텍스트필드에 입력값 판별
-            multiline={true} // 라인 늘어남
-            maxLength={10} // 글자수 제한
-            autoCapitalize={'none'} // 문장 첫글자 대문자 방지 (소문자로)
-            editable={true} // 입력 가능한지 안한지
-      />
-          <Button 
-            title="Add Text Input"
-            onPress={this.onAddTextInput}
-            />
-
-            <ScrollView style={{width : '100%'}}>
-              {
-                this.state.alphabet.map((item, idx) => (
-                  <Text 
-                  style={styles.mainText}
-                  key={idx}
-                  >
-                    {item}
-                  </Text>
-                ))
-              }
-            </ScrollView> */}
+        <Image 
+          style={styles.image}
+          source={Steak}
+          resizeMode='contain'
+          // resizeMode='cover'
+        />
       </View>
     )
   }
@@ -105,7 +85,12 @@ const styles = StyleSheet.create ({
     marginTop : 20,
     fontSize : 25,
     padding : 10
-}
+  },
+  image : {
+    backgroundColor : 'red',
+    width : '100%',
+    height : 700
+  }
 })
 
 export default App;
