@@ -10,14 +10,8 @@
  import { View, Text } from 'react-native';
  import { NavigationContainer } from '@react-navigation/native';
  import { createNativeStackNavigator } from '@react-navigation/native-stack';
- 
- function HomeScreen() {
-   return (
-     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-       <Text>Home Screen</Text>
-     </View>
-   );
- }
+ import HomeScreen from './src/home';
+ import UserScreen from './src/user';
  
  const Stack = createNativeStackNavigator();
  
@@ -25,7 +19,7 @@
    return (
      <NavigationContainer>
        <Stack.Navigator>
-         <Stack.Screen name="Home" component={HomeScreen} />
+         <Stack.Screen name="User" component={UserScreen} />
        </Stack.Navigator>
      </NavigationContainer>
    );
