@@ -7,12 +7,24 @@
  */
 
  import React, {Component} from 'react';
- import { View, Text } from 'react-native';
+ import { View, Text , Button } from 'react-native';
 
 class UserScreen extends Component {
     render() {
         return (
-            <Text>User Screen</Text>
+            <View style={{
+                flex : 1,
+                alignItems: 'center',
+                justifyContent : 'center'
+            }}>
+                <Text>User Screen</Text>
+                <Button
+                    title="To Home Screen"
+                    onPress={() => {
+                        this.props.navigation.navigate('Home')
+                    }}
+                />
+            </View>
         )
     }
 }
