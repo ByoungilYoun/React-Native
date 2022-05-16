@@ -31,7 +31,7 @@
             multiline={true} // 라인 늘어남
             maxLength={10} // 글자수 제한
             autoCapitalize={'none'} // 문장 첫글자 대문자 방지 (소문자로)
-            editable={false}
+            editable={true} // 입력 가능한지 안한지
       />
       </View>
      )

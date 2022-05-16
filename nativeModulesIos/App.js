@@ -1,8 +1,12 @@
 
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { exp } from 'react-native/Libraries/Animated/Easing';
-// import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
+// import { exp } from 'react-native/Libraries/Animated/Easing';
+import {NativeModules} from 'react-native'
+
+console.log(NativeModules.Counter);
+NativeModules.Counter.increment();
+console.log(NativeModules.Counter.getConstants)
 
 class App extends Component {
   render() {
@@ -24,23 +28,3 @@ const styles = StyleSheet.create({
     justifyContent : 'center'
   }
 })
-
-// const App = props => {
-//   return (
-//     <View style={StyleSheet.container}>
-//       <Text>App</Text>
-//     </View>
-//   )
-// }
-
-// export default App;
-
-// const styles = StyleSheet.create({
-//   container : {
-//     flex : 1,
-//     backgroundColor : '#fff',
-//     alignItems : 'center',
-//     justifyContent : 'center'
-//   }
-// })
-
