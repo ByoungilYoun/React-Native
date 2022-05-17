@@ -11,10 +11,16 @@
 
 class UserScreen extends Component {
     render() {
+
+        const {params} = this.props.route; // 이 스크린의 route 값을 설정해준다.
+        const userIdx = params ? params.userIdx : null;
+        const userName = params ? params.userName : null;
+        const userLastName = params ? params.userLastName : null;
+
         return (
             <View style={{
                 flex : 1,
-                alignItems: 'center',
+                alignItems: 'center', 
                 justifyContent : 'center'
             }}>
                 <Text>User Screen</Text>
@@ -24,6 +30,10 @@ class UserScreen extends Component {
                         this.props.navigation.navigate('Home')
                     }}
                 />
+
+                <Text>User Idx :  {JSON.stringify(userIdx)}</Text>
+                <Text>User Name :  {JSON.stringify(userName)}</Text>
+                <Text>User LastName :  {JSON.stringify(userLastName)}</Text>
             </View>
         )
     }
