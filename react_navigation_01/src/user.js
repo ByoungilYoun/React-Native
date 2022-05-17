@@ -10,8 +10,23 @@
  import { View, Text , Button } from 'react-native';
 
 class UserScreen extends Component {
-    render() {
 
+    headerStyle = () => {
+        this.props.navigation.setOptions({
+           title : 'Customizing',
+           headerStyle : {
+               backgroundColor : 'blue'
+           }, 
+           headerTintColor : 'yellow',
+           headerTitleStyle : {
+             fontWeight : 'bold',
+             color : 'green'
+           }
+        })
+    }
+
+    render() {
+        this.headerStyle();
         const {params} = this.props.route; // 이 스크린의 route 값을 설정해준다.
         const userIdx = params ? params.userIdx : null;
         const userName = params ? params.userName : null;
