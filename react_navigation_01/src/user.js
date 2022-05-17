@@ -22,7 +22,16 @@ class UserScreen extends Component {
              fontWeight : 'bold',
              color : 'green'
            },
-           headerBackTitle : 'Back'
+           headerBackTitle : 'Back',
+           headerRight : () => (
+            <Button
+            title="Go Back"
+            onPress={() => {
+                this.props.navigation.navigate('Home')
+            }}
+            color='orange'
+          />
+           )
         })
     }
 
