@@ -13,6 +13,7 @@
  import HomeScreen from './src/home';
  import UserScreen from './src/user';
  import LogoTitle from './src/logo';
+ import 'react-native-gesture-handler';
  
  const Stack = createNativeStackNavigator();
  
