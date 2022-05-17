@@ -18,7 +18,18 @@
  function App() {
    return (
      <NavigationContainer>
-       <Stack.Navigator>
+       <Stack.Navigator
+           screenOptions={{
+           headerStyle : {
+               backgroundColor : '#a4511e'
+           }, 
+           headerTintColor : '#fff',
+           headerTitleStyle : {
+             fontWeight : 'bold',
+             color : '#f3d612'
+           }
+          }} // 헤더 바 타이틀 바꾸기
+       >
        <Stack.Screen 
           name="Home" 
           component={HomeScreen} 

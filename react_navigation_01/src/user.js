@@ -26,7 +26,7 @@ class UserScreen extends Component {
     }
 
     render() {
-        this.headerStyle();
+        //this.headerStyle(); // 헤더 스타일 변형하는 함수를 위에서 만들어서 render() 함수 밑에서 사용해준다.
         const {params} = this.props.route; // 이 스크린의 route 값을 설정해준다.
         const userIdx = params ? params.userIdx : null;
         const userName = params ? params.userName : null;
