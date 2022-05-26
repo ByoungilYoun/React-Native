@@ -29,16 +29,43 @@
         //  style={this.state.mySquare.getLayout()}
             style={{
                 opacity : this.state.mySquare,
-                top : this.state.mySquare.interpolate({
-                    inputRange :  [0,1], // constructor 내부와 runAnimation 내부에 선언해둔 property 값이 들어감, 여기선 투명도, 작은값부터
-                    outputRange : [700, 0] // 동시에 효과를 내주고싶은 property 값이 들어간다.여기선 y 축 좌표값
-                })
+                transform : [
+                    {
+                     rotateX : this.state.mySquare.interpolate({
+                            inputRange :  [0,0.5,1], 
+                            outputRange : ['0deg', '180deg', '360deg'] 
+                    }),
+                    },
+                    {
+                        translateX : this.state.mySquare.interpolate({
+                               inputRange :  [0,0.5,1], 
+                               outputRange : [300,150,0] 
+                    })     
+                }]
+                // top : this.state.mySquare.interpolate({
+                //     inputRange :  [0,1], // constructor 내부와 runAnimation 내부에 선언해둔 property 값이 들어감, 여기선 투명도, 작은값부터
+                //     outputRange : [700, 0] // 동시에 효과를 내주고싶은 property 값이 들어간다.여기선 y 축 좌표값
+                // })
             }}
          >
             <View style={styles.square}>
             </View>
          </Animated.View>
- 
+
+        <Animated.Text
+            style={{
+                fontSize : this.state.mySquare.interpolate({
+                    inputRange :  [0,0.5,1], 
+                    outputRange : [40,30,20] 
+            }),
+            color : this.state.mySquare.interpolate({
+                inputRange :  [0,0.5,1], 
+                outputRange : ['red', 'green', 'blue'] 
+        }),
+        }}
+        >
+            <Text>Animated Effects</Text>
+        </Animated.Text>
         <Button
             title="Animation Start"
             onPress={this.runAnimation}
