@@ -17,7 +17,7 @@ class App extends Component {
 
   addImage = () => {
     // ImagePicker.launchCamera({}, response=>{
-    //   this.setState({
+    //   this.setState({v     
     //     avatar : response.uri
     //   })
     // }) // 카메라 켜기
