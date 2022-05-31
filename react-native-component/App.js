@@ -1,17 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {Fragment} from 'react';
-import { Text } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  
+  const name = 'Byoungil';
+
   return (
-    <Fragment>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto"/>
-    </Fragment>
-    // <View style={styles.container}>
-    //   <Text>Open up App.js to start working on your app!</Text>
-    //   <StatusBar style="auto" />
-    // </View>
+    <View style={styles.container}>
+      <Text style={styles.text}>Hello!! My name is {name}</Text>
+      <StatusBar style="auto" />
+    </View>
   );
 }
 
@@ -22,4 +21,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text : {
+    fontSize : 30
+  }
 });
