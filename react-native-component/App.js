@@ -8,7 +8,9 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello!! My name is {name}</Text>
+      <Text style={styles.text}>
+      My name is { name === 'Byoungil' ? 'Byoungil Youn' : 'React Native'}  
+      </Text> 
       <StatusBar style="auto" />
     </View>
   );
