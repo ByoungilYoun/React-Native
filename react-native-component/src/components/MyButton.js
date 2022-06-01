@@ -14,7 +14,7 @@ const MyButton = props => {
             }}
             onPress={() => alert('Click !!!')}
         >
-            <Text style={{ color : 'white' ,fontSize : 24 }}>{props.title}</Text>
+            <Text style={{ color : 'white' ,fontSize : 24 }}>{props.children || props.title}</Text>
         </TouchableOpacity>
     )
 }
