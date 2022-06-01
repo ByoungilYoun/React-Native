@@ -15,6 +15,7 @@ const App = () => {
         <Text style={{ fontSize : 30, marginBottom : 10 }}>Props</Text>
         <MyButton title = "Button" />
         <MyButton title = "Button">Children Props</MyButton>
+        <MyButton/>
         </View>
     )
 }
