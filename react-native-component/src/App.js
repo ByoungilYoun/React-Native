@@ -12,13 +12,8 @@ const App = () => {
                 justifyContent : 'center',
             }}
         >
-        <Text 
-        style={{ fontSize : 30, marginBottom : 10 
-            }}
-        >
-        My Button Component
-        </Text>
-        <MyButton/>
+        <Text style={{ fontSize : 30, marginBottom : 10 }}>Props</Text>
+        <MyButton title = "Button" />
         </View>
     )
 }
