@@ -1,6 +1,7 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import { View, Text, Button } from 'react-native';
 import MyButton from './components/MyButton';
+import Counter from './components/Counter';
 
 const App = () => {
     return (
@@ -12,10 +13,11 @@ const App = () => {
                 justifyContent : 'center',
             }}
         >
-        <Text style={{ fontSize : 30, marginBottom : 10 }}>Props</Text>
+        {/* <Text style={{ fontSize : 30, marginBottom : 10 }}>Props</Text>
         <MyButton title = "Button" />
         <MyButton title = "Button">Children Props</MyButton>
-        <MyButton/>
+        <MyButton/> */}
+        <Counter/>
         </View>
     )
 }
