@@ -6,7 +6,7 @@ const App = () => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Class Styling - Text</Text>
-            <Text style={styles.error}>Class Styling - Error</Text> 
+            <Text style={[styles.text, styles.error]}>Class Styling - Error</Text> 
         </View>
     )
 }
@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
         color : 'black'
     },
     error : {
-        padding : 10,
-        fontSize : 26,
+        // padding : 10,
+        // fontSize : 26,
         fontWeight : '400',
         color : 'red'
     }
