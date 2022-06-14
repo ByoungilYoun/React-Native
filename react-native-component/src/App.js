@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 import MyButton from './components/MyButton';
 import Counter from './components/Counter';
+import EventButton from './components/EventButton';
 
 const App = () => {
     return (
@@ -17,7 +18,8 @@ const App = () => {
         <MyButton title = "Button" />
         <MyButton title = "Button">Children Props</MyButton>
         <MyButton/> */}
-        <Counter/>
+        {/* <Counter/> */}
+        <EventButton/>
         </View>
     )
 }
